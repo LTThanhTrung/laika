@@ -29,8 +29,54 @@ export default function EVM() {
 
   useEffect(() => {
     const fetchChains = async () => {
-      const res = await fetch('https://chainid.network/chains.json')
-      const chains = await res.json()
+      // const res = await fetch('https://chainid.network/chains.json')
+      // const chains = await res.json()
+      const chains: object[] = [
+        {
+          name: 'Ronin Network',
+          chain: 'RON',
+          rpc: ['https://api.roninchain.com/rpc'],
+          faucets: [],
+          nativeCurrency: {
+            name: 'Ronin',
+            symbol: 'RON',
+            decimals: 18,
+          },
+          infoURL: 'https://roninchain.com/',
+          shortName: 'ron',
+          chainId: 2020,
+          networkId: 2020,
+          explorers: [
+            {
+              name: 'explorer',
+              url: 'https://app.roninchain.com/',
+              standard: 'EIP3091',
+            },
+          ],
+        },
+        {
+          name: 'Saigon Testnet',
+          chain: 'RON',
+          rpc: ['https://saigon-testnet.roninchain.com/rpc'],
+          faucets: [],
+          nativeCurrency: {
+            name: 'Ronin',
+            symbol: 'RON',
+            decimals: 18,
+          },
+          infoURL: 'https://roninchain.com/',
+          shortName: 'ron',
+          chainId: 2021,
+          networkId: 2021,
+          explorers: [
+            {
+              name: 'explorer',
+              url: 'https://saigon-app.roninchain.com/',
+              standard: 'EIP3091',
+            },
+          ],
+        },
+      ]
       setChains(chains)
     }
     fetchChains()
