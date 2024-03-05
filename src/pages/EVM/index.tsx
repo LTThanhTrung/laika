@@ -14,6 +14,7 @@ import DocumentContent from './Documentation/DocumentContent'
 import DocumentList from './Documentation/DocumentList'
 import Welcome from './Welcome'
 import Toolbar from './Toolbar'
+import { EVMChain } from '@/store/chains'
 
 export default function EVM() {
   const toolbarRef = useRef<AllotmentHandle>(null)
@@ -31,7 +32,7 @@ export default function EVM() {
     const fetchChains = async () => {
       // const res = await fetch('https://chainid.network/chains.json')
       // const chains = await res.json()
-      const chains: object[] = [
+      const chains: EVMChain[] = [
         {
           name: 'Ronin Network',
           chain: 'RON',
@@ -42,6 +43,7 @@ export default function EVM() {
             symbol: 'RON',
             decimals: 18,
           },
+          slip44: 1,
           infoURL: 'https://roninchain.com/',
           shortName: 'ron',
           chainId: 2020,
@@ -64,6 +66,7 @@ export default function EVM() {
             symbol: 'RON',
             decimals: 18,
           },
+          slip44: 1,
           infoURL: 'https://roninchain.com/',
           shortName: 'ron',
           chainId: 2021,
